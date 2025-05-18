@@ -1,0 +1,88 @@
+.add {
+    width: 70%;
+    margin-left: max(5vw, 25px);
+    margin-top: 50px;
+    color: #444;
+    font-size: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.add form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.add-img-upload img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 2px dashed #555;
+    border-radius: 8px;
+    transition: 0.3s ease;
+}
+.add-img-upload img:hover {
+    border-color: #000;
+}
+
+.add-product-name,
+.add-product-description {
+    width: max(40%, 280px);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.add-product-name input,
+.add-product-description textarea {
+    padding: 12px;
+    border: 1.5px solid #bbb;
+    border-radius: 6px;
+    font-size: 14px;
+    resize: vertical;
+    background-color: #fff;
+}
+
+.add-category-price {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.add-category,
+.add-price {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.add-category-price select,
+.add-category-price input {
+    width: 150px;
+    padding: 10px;
+    border: 1.5px solid #bbb;
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: #fff;
+}
+
+.add-btn {
+    width: fit-content;
+    max-width: 200px;
+    padding: 12px 24px;
+    background-color: #28a745;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.add-btn:hover {
+    background-color: #218838;
+}

@@ -1,0 +1,107 @@
+.food-item {
+    width: 100%;
+    max-width: 300px;
+    margin: auto;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeIn 1.5s;
+}
+
+.food-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.food-item-image {
+    width: 100%;
+    display: block;
+    border-radius: 20px 20px 0 0;
+    object-fit: cover;
+    height: 180px;
+}
+
+.food-item-info {
+    padding: 1rem;
+}
+
+.food-item-name-rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.food-item-name-rating p {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+    color: #333;
+}
+
+.food-item-name-rating img {
+    width: 60px;
+    height: auto;
+}
+
+.food-item-desc {
+    color: #555;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin: 0.5rem 0;
+    text-align: center;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.food-item-price {
+    color: #e63946;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 20px 0 0 10px;
+}
+
+.food-item-img-container {
+    position: relative;
+}
+
+.food-item-img-container .add {
+    width: 35px;
+    height: 35px; 
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.food-item-img-container .add img {
+    width: 18px; 
+    height: 18px; 
+    object-fit: contain;
+}
+
+.food-item-counter {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px;
+    border-radius: 50px;
+    background-color: white;
+}
+
+.food-item-counter img {
+    width: 30px;
+    height: 30px; /* Ensure the remove and add icons inside the counter are sized appropriately */
+}
+

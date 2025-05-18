@@ -1,0 +1,55 @@
+.header {
+    height: 35vw;
+    margin: 30px auto;
+    background: url('/header_img.png') no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+
+.header-contents {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 0.5vw;
+    max-width: 50%;
+    bottom: 10%;
+    left: 4vw;
+    animation: fadeIn 3s;
+}
+
+.header-contents h2 {
+    font-weight: 500;
+    color: white;
+    font-size: clamp(22px, 4.5vw, 40px);
+}
+
+.header-contents p {
+    color: white;
+    font-size: clamp(14px, 1.5vw, 20px);
+}
+
+.header-contents button {
+    align-self: flex-start; /* makes sure the button stays to the left */
+    margin-top: auto; /* pushes it to the bottom inside the flex column */
+    border: none;
+    color: #747474;
+    font-weight: 500;
+    padding: 1vw 2.3vw;
+    background-color: white;
+    font-size: clamp(13px, 1vw, 16px);
+    border-radius: 50px;
+}
+
+@media(max-width: 750px){
+    .header-contents{
+        max-width: 65%;
+    }
+    .header-contents p{
+        display: none;
+    }
+    .header-contents button{
+        padding: 2vw 4vw;
+    }
+}

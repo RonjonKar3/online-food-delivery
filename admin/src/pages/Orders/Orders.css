@@ -1,0 +1,121 @@
+/* Global container */
+.order-container {
+  padding: 2rem 1rem;
+  background-color: #93afcaa9;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Centered content wrapper */
+.order-content {
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* Heading */
+.order-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+/* Message for no orders */
+.no-orders {
+  text-align: center;
+  font-size: 1.3rem;
+  color: #7f8c8d;
+  margin-top: 3rem;
+}
+
+/* List of orders */
+.order-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Each order card */
+.order-item {
+  background-color: #ffffffa0;
+  display: flex;
+  gap: 1rem;
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  align-items: flex-start;
+  flex-wrap: wrap;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.order-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Parcel icon */
+.order-item img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+/* Order details section */
+.order-item > div {
+  flex-grow: 1;
+  min-width: 250px;
+}
+
+/* Food items */
+.order-item-food {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #34495e;
+}
+
+/* Customer name */
+.order-item-name {
+  margin-top: 0.25rem;
+  font-size: 1.05rem;
+  color: #2c3e50;
+}
+
+/* Address section */
+.order-item-address {
+  margin-top: 0.25rem;
+  font-size: 0.95rem;
+  color: #7f8c8d;
+}
+
+/* Phone number */
+.order-item-phone {
+  margin-top: 0.25rem;
+  color: #3498db;
+  font-weight: 500;
+}
+
+/* Summary (items, total, status) */
+.order-summary {
+  min-width: 180px;
+  text-align: right;
+  color: #2d3436;
+  font-size: 0.95rem;
+}
+
+.order-summary p {
+  margin: 4px 0;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .order-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .order-summary {
+    text-align: left;
+    margin-top: 1rem;
+  }
+}

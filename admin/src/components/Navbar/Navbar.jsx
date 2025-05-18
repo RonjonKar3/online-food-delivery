@@ -1,0 +1,27 @@
+import React from 'react';
+import './Navbar.css';
+import { assets } from '../../assets/assets';
+import { useNavigate } from 'react-router-dom';
+
+const Navbar = () => {
+  const navigate = useNavigate();
+
+  const handleProfileClick = () => {
+    navigate('/admin-login'); // 👈 This should match the route for Login.jsx
+  };
+
+  return (
+    <div className='navbar'>
+      <img className='logo' src={assets.logo} alt="Logo" />
+      <img
+        className='profile'
+        src={assets.profile_image}
+        alt="Profile"
+        onClick={handleProfileClick}
+        style={{ cursor: 'pointer' }} // 👈 Makes it clear it's clickable
+      />
+    </div>
+  );
+};
+
+export default Navbar;

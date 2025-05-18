@@ -1,0 +1,250 @@
+/* General Navbar styling */
+.navbar {
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8f9fa; /* Lighter background for contrast */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.navbar .logo {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+/* Navbar menu */
+.navbar-menu {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    color: #49557e;
+    font-size: 18px;
+}
+
+.navbar-menu li {
+    cursor: pointer;
+}
+
+/* Hover effect for menu items */
+.navbar-menu li:hover {
+    color: #e53935;
+    border-bottom: 2px solid #e53935;
+    padding-bottom: 4px;
+}
+
+/* Navbar right (icons and login) */
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+/* Button styling */
+.navbar button {
+    background: transparent;
+    font-size: 16px;
+    color: #49557e;
+    border: 1px solid tomato;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar button:hover {
+    background-color: #fff4f2;
+    transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+/* Search icon styling */
+.search-icon {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.search-icon:hover {
+    transform: scale(1.1); /* Slightly enlarge the search icon */
+}
+
+/* Cart icon and notification dot */
+.cart-icon-wrapper {
+    position: relative;
+}
+
+.basket-icon {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.basket-icon:hover {
+    transform: scale(1.1); /* Slightly enlarge the basket icon */
+}
+
+/* Dot for cart notification */
+.dot {
+    position: absolute;
+    min-width: 10px;
+    min-height: 10px;
+    background-color: tomato;
+    border-radius: 50%;
+    top: -5px;
+    right: -5px;
+}
+
+/* Profile Dropdown */
+.profile-wrapper {
+    position: relative;
+    cursor: pointer;
+}
+
+.profile-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: transform 0.2s ease;
+}
+
+.profile-icon:hover {
+    transform: scale(1.1); /* Slightly enlarge profile icon */
+}
+
+.profile-dropdown {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    padding: 10px;
+    z-index: 1000;
+    width: 140px;
+    text-align: left;
+}
+
+/* Show dropdown on hover */
+.profile-wrapper:hover .profile-dropdown {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Dropdown items styling */
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: #333;
+    text-decoration: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+/* Hover effect for dropdown items */
+.dropdown-item:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.05); /* Slightly enlarge the dropdown items */
+}
+
+/* Icon styling inside dropdown items */
+.dropdown-icon {
+    width: 15px; /* Ensure consistent size */
+    height: 15px; /* Ensure consistent size */
+    transition: transform 0.2s ease;
+}
+
+/* Hover effect for icons inside dropdown items */
+.dropdown-item:hover .dropdown-icon {
+    transform: scale(1.2); /* Enlarge icon inside dropdown on hover */
+}
+
+/* Logout button styling */
+.logout-btn {
+    border: none;
+    background: none;
+    color: tomato;
+    cursor: pointer;
+    padding: 0;
+    font-size: 14px;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover effect for logout button */
+.logout-btn:hover {
+    color: #d32f2f;
+    transform: scale(1.1); /* Slightly enlarge logout button */
+}
+
+/* Profile & Orders icons */
+.profile-icon,
+.dropdown-item .dropdown-icon,
+.basket-icon {
+    width: 50px;  /* Ensuring consistent size for icons */
+    height: 50px; /* Ensuring consistent size for icons */
+    cursor: pointer;
+}
+
+/* Styling the "Orders" and "Logout" items to make them consistent */
+.dropdown-item,
+.logout-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Remove any circular fill background for the logout icon */
+.logout-btn {
+    background: none;
+    border: none;
+    font-size: 14px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 750px) {
+    .navbar-menu {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background-color: #fff;
+        padding: 10px;
+        width: 100%;
+    }
+
+    .navbar-menu.active {
+        display: flex;
+    }
+
+    .navbar-menu li {
+        padding: 10px 0;
+    }
+
+    .navbar-right {
+        display: flex;
+        gap: 15px;
+    }
+
+    .navbar-right .menu-toggle {
+        display: block;
+        cursor: pointer;
+    }
+
+    .navbar-right .menu-toggle img {
+        width: 30px;
+        height: 30px;
+    }
+}
