@@ -21,8 +21,8 @@ const LoginPopup = ({ setShowLogin }) => {
     e.preventDefault();
 
     const url = currState === "Login"
-      ? "http://localhost:4000/api/user/login"
-      : "http://localhost:4000/api/user/register";
+      ? "https://online-food-delivery-0ca5.onrender.com/api/user/login"
+      : "https://online-food-delivery-0ca5.onrender.com/api/user/register";
 
     const response = await fetch(url, {
       method: "POST",

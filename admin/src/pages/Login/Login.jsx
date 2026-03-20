@@ -13,7 +13,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:4000/admin/login", {
+      const response = await axios.post("https://online-food-delivery-0ca5.onrender.com/admin/login", {
         email,
         password,
       });

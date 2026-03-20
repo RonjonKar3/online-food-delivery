@@ -10,7 +10,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
-  const url = "http://localhost:4000";
+  const url = "https://online-food-delivery-0ca5.onrender.com";
 
   // Get token fresh every render (optional improvement)
   const token = localStorage.getItem("token");
