@@ -4,7 +4,8 @@ import { assets } from '../../assets/assets';
 import { StoreContext } from '../../context/StoreContext';
 
 const LoginPopup = ({ setShowLogin }) => {
-  const { setIsLoggedIn } = useContext(StoreContext);
+  // Pull setToken and setIsLoggedIn from Context to update the whole app
+  const { setIsLoggedIn, setToken } = useContext(StoreContext); 
   const [currState, setCurrState] = useState("Login");
   const [data, setData] = useState({
     name: "",
@@ -24,27 +25,33 @@ const LoginPopup = ({ setShowLogin }) => {
       ? "https://online-food-delivery-0ca5.onrender.com/api/user/login"
       : "https://online-food-delivery-0ca5.onrender.com/api/user/register";
 
-    const response = await fetch(url, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    });
+    try {
+      const response = await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
 
-    const result = await response.json();
+      const result = await response.json();
 
-    if (result.success) {
-      alert(`${currState} successful!`);
-      localStorage.setItem("token", result.token);
-      setIsLoggedIn(true);
+      if (result.success) {
+        // 1. Save token to LocalStorage (for page refreshes)
+        localStorage.setItem("token", result.token);
+        
+        // 2. Update Context state (to refresh Navbar/UI immediately)
+        if(setToken) setToken(result.token); 
+        setIsLoggedIn(true);
 
-      if (currState === "Login") {
+        // 3. Close the popup
         setShowLogin(false);
+        
+        alert(`${currState} Successful!`);
       } else {
-        setCurrState("Login");
-        setData({ name: "", email: "", password: "" });
+        alert(result.message || "Invalid credentials. Please try again.");
       }
-    } else {
-      alert(result.message || "Something went wrong.");
+    } catch (error) {
+      console.error("Login Error:", error);
+      alert("Server is waking up (Render Free Tier). Please wait 30 seconds and try again.");
     }
   };
 
@@ -56,7 +63,7 @@ const LoginPopup = ({ setShowLogin }) => {
           <img
             onClick={() => setShowLogin(false)}
             src={assets.cross_icon}
-            alt="Close popup"
+            alt="Close"
             style={{ cursor: "pointer" }}
           />
         </div>
